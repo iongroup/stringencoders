@@ -1,0 +1,6 @@
+{
+  "name": "stringencoders",
+  "version": "0.0.0",
+  "main": "javascript/base64.js",
+  "description": "fast c-string transformations"
+}
