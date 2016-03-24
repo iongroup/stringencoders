@@ -1,4 +1,20 @@
-/*
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module unless amdModuleId is set
+    define(function () {
+      return factory();
+    });
+  } else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory();
+  } else {
+    root.base64 = factory();
+  }
+}(this, function () {
+
+ /*
  * Copyright (c) 2010 Nick Galbreath
  * http://code.google.com/p/stringencoders/source/browse/#svn/trunk/javascript
  *
@@ -174,4 +190,5 @@ base64.encode = function(s) {
     }
     return x.join('');
 }
-module.exports = base64;
+return base64;
+}));
